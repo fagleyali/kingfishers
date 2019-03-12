@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Kingfisher Detail</h1>
+
+<div class="card">
+        <div class="card-content">
+          <span class="card-title">{{ kingfisher.name }}</span>
+          <p>Breed: {{ kingfisher.breed }}</p>
+          <p>Diet: {{kingfisher.diet}}</p>
+          <p>Description: {{ kingfisher.description }}</p>
+          {% if kingfisher.age > 0 %}
+            <p>Age: {{ kingfisher.age }}</p>
+          {% else %}
+            <p>Age: Small Pie</p>
+          {% endif %}
+        </div>
+      </div>
+      
+      {% endblock %}
