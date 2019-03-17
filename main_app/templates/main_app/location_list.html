@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Location List</h1>
+    
+        {% for l in location_list %}
+        <a href="{% url 'locations_detail' l.id %}">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">{{l.where}}</span>
+            </div>
+
+        </div>
+    </a>
+        {% endfor %}
+   
+
+
+
+{% endblock %}

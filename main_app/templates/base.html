@@ -19,9 +19,18 @@
                     <li><a href="/" class="left brand-logo">&nbsp;&nbsp;KingFishers'</a></li>
                 </ul>
                 <ul class="right">
-                    <li><a href="/about">About</a></li>
+                    
+                    <li><a href="{%url 'about' %}">About</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'locations_create' %}">Create Location</a></li>
+                    <li><a href="{% url 'locations_index' %}">View Locations</a></li>
                     <li><a href="{% url 'kingfishers_create' %}">Create Kingfisher</a></li>
                     <li><a href="/kingfishers">View KingFishers</a></li>
+                    <li><a href="{% url 'logout' %}">Sign out</a></li>
+                    {% else %}
+                    <li><a href="{%url 'login'%}">Sign in</a></li>
+                    <li><a href="{% url 'signup' %}">Sign up</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
